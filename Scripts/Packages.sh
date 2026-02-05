@@ -23,7 +23,7 @@ UPDATE_PACKAGE() {
 	local PKG_REPO=$2
 	local PKG_BRANCH=$3
 	local PKG_SPECIAL=${4:-""}
-	local PKG_LIST=("$PKG_NAME" $5)
+	local PKG_LIST=("$PKG_NAME" "${5:-}")  # 修复未定义 $5
 	local REPO_NAME=${PKG_REPO#*/}
 
 	echo " "
